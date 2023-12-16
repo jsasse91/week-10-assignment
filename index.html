@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- this is how I'm pulling in bootstrap, instead of having to run npm install -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Family Vacation List</title>
+</head>
+<!-- using bootstrap to define the body as a container  -->
+<body class="container"> 
+  <!-- setting up the card that will hold my form making it the primary background 
+    (blue) giving it a margin top of 3
+   -->
+  <div class="card bg-primary mt-3">
+    <!-- creating the card body and making the text white -->
+    <div class="card-body text-light">
+      <!-- using the bootstrap grid system for organization, starting the row -->
+      <div class="row">
+        <!-- putting the first input in a column (small) -->
+        <div class="col-sm">
+          <!-- pulling in the form-group style -->
+          <div class="form-group">
+            <!-- setting up the form, first label and input being for the start date of the vacation -->
+            <label for="planned-start-date">Planned Start Date</label>
+            <!-- making it a date selector and assigning it an id to be referred to in the js -->
+            <input type="date" class="form-control" id="planned-start-date">
+          </div>
+        </div>
+        <!-- putting the second input in a column (small) -->
+        <div class="col-sm">
+          <!-- pulling in the form-group style -->
+          <div class="form-group">
+            <!-- continuing the form, second label and input for the end date of the vacation -->
+            <label for="planned-end-date">Planned End Date</label>
+            <!-- making it a date selector and assigning it an id to be referred to in the js -->
+            <input type="date" class="form-control" id="planned-end-date">
+          </div>
+        </div>
+      </div>
+      <!-- creating the second row which will hold my text input part of my form -->
+      <div class="row">
+        <!-- putting it in it's own column as well -->
+        <div class="col-sm">
+          <!-- pulling in the form-group style -->
+          <div class="form-group">
+            <!-- continuing the form, third label and input for the destination of the vacation -->
+            <label for="vac-destination">Destination</label>
+            <!-- making it a text input field, assigning it an id to be used in the js later, giving 
+              it a placeholder value -->
+            <input type="text" class="form-control" id="vac-destination" placeholder="Destination">
+          </div>
+        </div>
+      </div>
+      <!-- creating the final row that will hold the Add Destination button -->
+      <div class="row">
+        <!-- putting it in it's own column -->
+        <div class="col-md">
+          <!-- creating the button, assiging it an id to be used in the js later,
+             making it the light style to fit with my aesthetic -->
+          <button id="add" class="btn btn-light mt-2">Add Destination</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- setting up the table that we will build as we click the button, giving it an id that will be 
+    used in the js giving it some styling from bootstrap, using the striped table, making it blue to 
+    fit in with my page styling and adding a border -->
+  <table id='list' class="table table-primary table-striped mt-3 border border-dark">
+    <tr>
+      <th>Planned Leave Date</th>
+      <th>Planned Return Date</th>
+      <th>Vacation Name</th>
+      <th>Actions</th>
+    </tr>
+  </table>
+  
+  <!-- hooking up my js file -->
+  <script src="index.js"></script>
+</body>
+</html>
